@@ -11,7 +11,10 @@
 
 using namespace std;
 
-GradeBook::GradeBook(string name){
+GradeBook::GradeBook(string name)
+: A(0), B(0), C(0), D(0), F(0)
+
+{
     setCourseName(name);
 }
 
@@ -66,4 +69,55 @@ void GradeBook::determineClassAvargeUntillQuit(){
         double average = total/counter;
         cout << "Average :"<<average<<endl;
     }
+}
+void GradeBook::inputGrades(){
+    int grade;
+    cout <<"Enter the letter of grades or enter the end of file character to quit:"<<endl;
+    
+    while ((grade = cin.get() ) != EOF){
+
+        switch(grade){
+            case 'A':
+            case 'a':
+                ++A;
+                break;
+            case 'B':
+            case 'b':
+                B++;
+                break;
+            case 'C':
+            case 'c':
+                C++;
+                break;
+            case 'D':
+            case 'd':
+                D++;
+                break;
+            case 'F':
+            case'f':
+                F++;
+                break;
+            case '\n':
+            case '\t':
+            case ' ':
+                break;
+                
+            default:
+                cout<<"Alert"<<endl;
+                break;
+                
+                
+        }
+    }
+    
+}
+
+void GradeBook::displayLetterGrades(){
+    cout << "Number of students per letter:"<<endl;
+    cout<<"A: "<<A<<endl;
+    cout<<"B: "<<B<<endl;
+    cout<<"C: "<<C<<endl;
+    cout<<"D: "<<D<<endl;
+    cout<<"F: "<<F<<endl;
+    
 }

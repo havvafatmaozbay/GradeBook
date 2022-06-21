@@ -22,9 +22,27 @@ public:
     void determineClassAverage(int);
     
     void determineClassAvargeUntillQuit();
+    void inputGrades();
+    
+    /*void setA(int);
+    void setB(int);
+    void setC(int);
+    void setD(int);
+    void setF(int);
+    
+    int getA();
+    int getB();
+    int getC();
+    int getD();
+    int getF();*/
+    
+    void displayLetterGrades();
+    
+    
     
 private:
     string courseName;
+    int A,B,C,D,F;
 };
 
 #endif /* GradeBook_hpp */
